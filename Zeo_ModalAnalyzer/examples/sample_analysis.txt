@@ -1,0 +1,49 @@
+# Sample Analysis Input for Zeo Modal Analyzer
+
+# This file demonstrates how to set up a sample analysis for the Zeo Modal Analyzer application.
+
+# Example parameters for the analysis
+# Define the material properties
+material_properties = {
+    "Young's Modulus": 210e9,  # Pa
+    "Poisson's Ratio": 0.3,
+    "Density": 7850  # kg/m^3
+}
+
+# Define the geometry of the structure
+geometry = {
+    "length": 2.0,  # meters
+    "width": 0.5,   # meters
+    "height": 0.1   # meters
+}
+
+# Define the boundary conditions
+boundary_conditions = {
+    "fixed_edges": ["edge1", "edge2"],
+    "load": {
+        "type": "point_load",
+        "magnitude": 1000,  # Newtons
+        "location": [1.0, 0.25, 0.1]  # x, y, z coordinates
+    }
+}
+
+# Define the mesh settings
+mesh_settings = {
+    "element_type": "tetrahedral",
+    "element_size": 0.1  # meters
+}
+
+# Instructions for running the analysis
+instructions = """
+To run the analysis, use the following command in the terminal:
+
+python src/main.py --input examples/sample_analysis.txt
+"""
+
+# Output the sample analysis setup
+print("Sample Analysis Setup:")
+print("Material Properties:", material_properties)
+print("Geometry:", geometry)
+print("Boundary Conditions:", boundary_conditions)
+print("Mesh Settings:", mesh_settings)
+print(instructions)
